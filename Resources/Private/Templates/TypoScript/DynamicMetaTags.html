@@ -1,0 +1,15 @@
+<f:if condition="{node.properties.metaTitle}">
+	<f:then>
+		<meta name="title" content="{node.properties.metaTitle}" />
+	</f:then>
+</f:if>
+<f:if condition="{node.properties.metaKeywords}">
+	<f:then>
+		<meta name="keywords" content="{node.properties.metaKeywords}" />
+	</f:then>
+</f:if>
+<f:if condition="{node.properties.metaDescription}">
+	<f:then>
+		<meta name="description" content="{node.properties.metaDescription}" />
+	</f:then>
+</f:if>

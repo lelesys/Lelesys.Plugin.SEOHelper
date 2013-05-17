@@ -1,0 +1,14 @@
+{namespace typo3=TYPO3\Neos\ViewHelpers}
+<f:if condition="{node.properties.customTitle}">
+	<f:then>
+		{node.properties.customTitle} - Neos Demo
+	</f:then>
+	<f:else>
+		<f:if condition="{items}">
+			<f:for each="{items}" as="item" reverse="true">
+				{item.label} -
+			</f:for>
+		</f:if>
+		Neos Demo
+	</f:else>
+</f:if>

@@ -1,0 +1,37 @@
+'TYPO3.Neos.NodeTypes:Page':
+  superTypes: ['TYPO3.Neos.NodeTypes:Folder']
+  ui:
+    inspector:
+      groups:
+        metaoptions:
+          label: 'Meta Tag Options'
+          priority: 2
+  properties:
+    metaTitle:
+      type: string
+      ui:
+        label: 'Meta Title'
+        inspector:
+          group: 'metaoptions'
+        reloadIfChanged: TRUE
+    metaKeywords:
+      type: string
+      ui:
+        label: 'Meta Keywords'
+        inspector:
+          group: 'metaoptions'
+        reloadIfChanged: TRUE
+    metaDescription:
+      type: string
+      ui:
+        label: 'Meta Description'
+        inspector:
+          group: 'metaoptions'
+        reloadIfChanged: TRUE
+    customTitle:
+      type: string
+      ui:
+        label: 'Custom Page Title'
+        inspector:
+          group: 'page'
+        reloadIfChanged: TRUE
