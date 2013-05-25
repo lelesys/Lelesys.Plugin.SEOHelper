@@ -1,5 +1,7 @@
+
 'TYPO3.Neos.NodeTypes:Page':
-  superTypes: ['TYPO3.Neos.NodeTypes:Folder']
+  superTypes:
+    - 'TYPO3.Neos:Document'
   ui:
     inspector:
       groups:
@@ -12,26 +14,26 @@
       ui:
         label: 'Meta Title'
         inspector:
-          group: 'metaoptions'
-        reloadIfChanged: TRUE
+          group: metaoptions
+        reloadIfChanged: true
     metaKeywords:
       type: string
       ui:
         label: 'Meta Keywords'
         inspector:
-          group: 'metaoptions'
-        reloadIfChanged: TRUE
+          group: metaoptions
+        reloadIfChanged: true
     metaDescription:
       type: string
       ui:
         label: 'Meta Description'
         inspector:
-          group: 'metaoptions'
-        reloadIfChanged: TRUE
+          group: metaoptions
+        reloadIfChanged: true
     customTitle:
       type: string
       ui:
         label: 'Custom Page Title'
         inspector:
-          group: 'page'
-        reloadIfChanged: TRUE
+          group: page
+        reloadIfChanged: true
