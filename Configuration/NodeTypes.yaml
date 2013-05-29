@@ -1,5 +1,5 @@
 
-'TYPO3.Neos.NodeTypes:Page':
+'TYPO3.Neos:Page':
   superTypes:
     - 'TYPO3.Neos:Document'
   ui:
@@ -35,5 +35,5 @@
       ui:
         label: 'Custom Page Title'
         inspector:
-          group: page
+          group: document
         reloadIfChanged: true
