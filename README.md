@@ -12,7 +12,7 @@ page = Page
 page.headerData {
 	title = Template
 	title.templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/TitleMenu.html'
-	title.items = ${context.parents().add(context)}
+	title.items = ${q(node).parents().add(q(node))}
 	title << 1.wrap(prefix:'<title>', suffix: '</title>')
 }
 
