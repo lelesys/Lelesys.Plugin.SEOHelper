@@ -15,25 +15,21 @@
         label: 'Meta Title'
         inspector:
           group: metaoptions
-        reloadIfChanged: true
     metaKeywords:
       type: string
       ui:
         label: 'Meta Keywords'
         inspector:
           group: metaoptions
-        reloadIfChanged: true
     metaDescription:
       type: string
       ui:
         label: 'Meta Description'
         inspector:
           group: metaoptions
-        reloadIfChanged: true
     customTitle:
       type: string
       ui:
         label: 'Custom Page Title'
         inspector:
           group: document
-        reloadIfChanged: true
