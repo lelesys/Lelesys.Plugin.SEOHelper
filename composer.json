@@ -1,5 +1,5 @@
 {
-	"name": "lelesys/plugin-seohelper",
+	"name": "lelesys/plugin-seo-helper",
 	"description": "A seo plugin for TYPO3 Neos",
 	"license": "LGPL-3.0+",
 	"type": "typo3-flow-plugin",
