@@ -1,0 +1,15 @@
+page.headerData {
+	title = Template
+	title.templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/TitleMenu.html'
+	title.items = ${q(node).parents().add(q(node))}
+	title << 1.wrap(prefix:'<title>', suffix: '</title>')
+	title.customTitle = ${q(node).property('customTitle')}
+
+	dynamicMetaTag = Template
+	dynamicMetaTag {
+		templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/DynamicMetaTags.html'
+		metaTitle = ${q(node).property('metaTitle')}
+		metaKeywords = ${q(node).property('metaKeywords')}
+		metaDescription = ${q(node).property('metaDescription')}
+	}
+}
