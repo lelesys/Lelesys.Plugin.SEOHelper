@@ -8,8 +8,18 @@ page.headerData {
 	dynamicMetaTag = Template
 	dynamicMetaTag {
 		templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/DynamicMetaTags.html'
-		metaTitle = ${q(node).property('metaTitle')}
-		metaKeywords = ${q(node).property('metaKeywords')}
-		metaDescription = ${q(node).property('metaDescription')}
+		metaTitle = Lelesys.Plugin.SEOHelper:MetaProperty
+		metaTitle.parents = ${q(node).parents()}
+		metaTitle.propertyName = 'metaTitle'
+		metaKeywords = Lelesys.Plugin.SEOHelper:MetaProperty
+		metaKeywords.parents = ${q(node).parents()}
+		metaKeywords.propertyName = 'metaKeywords'
+		metaDescription = Lelesys.Plugin.SEOHelper:MetaProperty
+		metaDescription.parents = ${q(node).parents()}
+		metaDescription.propertyName = 'metaDescription'
 	}
+}
+
+prototype(Lelesys.Plugin.SEOHelper:MetaProperty) {
+	@class = 'Lelesys\\Plugin\\SEOHelper\\TypoScript\\MetaProperty'
 }

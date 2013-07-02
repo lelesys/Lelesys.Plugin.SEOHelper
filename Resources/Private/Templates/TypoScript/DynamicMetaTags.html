@@ -1,15 +1,16 @@
-<f:if condition="{metaTitle}">
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+<f:if condition="{ts:render(path: 'metaTitle')}">
 	<f:then>
-		<meta name="title" content="{metaTitle}" />
+		<meta name="title" content="{ts:render(path: 'metaTitle')}" />
 	</f:then>
 </f:if>
-<f:if condition="{metaKeywords}">
+<f:if condition="{ts:render(path: 'metaKeywords'}">
 	<f:then>
-		<meta name="keywords" content="{metaKeywords}" />
+		<meta name="keywords" content="{ts:render(path: 'metaKeywords')}" />
 	</f:then>
 </f:if>
-<f:if condition="{metaDescription}">
+<f:if condition="{ts:render(path: 'metaDescription'}">
 	<f:then>
-		<meta name="description" content="{metaDescription}" />
+		<meta name="description" content="{ts:render(path: 'metaDescription')}" />
 	</f:then>
 </f:if>
