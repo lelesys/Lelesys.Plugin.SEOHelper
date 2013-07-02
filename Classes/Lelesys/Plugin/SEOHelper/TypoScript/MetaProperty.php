@@ -81,10 +81,6 @@ class MetaProperty extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScrip
 				}
 			}
 		}
-		if(empty($metaProperty)) {
-			$primaryNode = $this->contentContext->getCurrentSiteNode()->getPrimaryChildNode();
-			return $primaryNode->getProperty($this->propertyName);
-		}
 		return $metaProperty;
 	}
 }

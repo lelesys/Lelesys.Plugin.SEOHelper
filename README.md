@@ -6,15 +6,12 @@ This plugin adds meta tags to TYPO3 Neos websites.
 Setup
 -----
 
-Enter the following line in the Root.ts2 of your sites package
-
-``include: resource://Lelesys.Plugin.SiteMap/Private/TypoScripts/Library/Root.ts2
-``
-
 Include the plugin's TypoScript definitions to your own one's (located in, for example, `Packages/Sites/Your.Site/Resources/Private/TypoScripts/Library/ContentElements.ts2`, with:
 
 ``include: resource://Lelesys.Plugin.SEOHelper/Private/TypoScripts/Library/NodeTypes.ts2
 ``
+Note: The above path should be included after "page = TYPO3.Neos:Page"
+
 Usage
 -----
 
