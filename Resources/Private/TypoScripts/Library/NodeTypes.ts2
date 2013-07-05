@@ -1,4 +1,4 @@
-page.headerData {
+page.head {
 	title = Template
 	title.templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/TitleMenu.html'
 	title.items = ${q(node).parents().add(q(node))}
