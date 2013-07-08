@@ -1,25 +1,25 @@
+include: resource://Lelesys.Plugin.SEOHelper/Private/TypoScripts/Library/TypoScriptObjects.ts2
+
 page.head {
 	title = Template
 	title.templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/TitleMenu.html'
 	title.items = ${q(node).parents().add(q(node))}
+	# add prefix, suffix here if needed
+	# e.g. title << 1.wrap(prefix:'<title>', suffix: ' - my suffix </title>')
 	title << 1.wrap(prefix:'<title>', suffix: '</title>')
 	title.customTitle = ${q(node).property('customTitle')}
 
-	dynamicMetaTag = Template
-	dynamicMetaTag {
+	dynamicMetaTags = Template
+	dynamicMetaTags {
 		templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/DynamicMetaTags.html'
-		metaTitle = Lelesys.Plugin.SEOHelper:MetaProperty
-		metaTitle.parents = ${q(node).parents()}
+
+		metaTitle = Lelesys.Plugin.SEOHelper:MetaPropertySlider
 		metaTitle.propertyName = 'metaTitle'
-		metaKeywords = Lelesys.Plugin.SEOHelper:MetaProperty
-		metaKeywords.parents = ${q(node).parents()}
+
+		metaKeywords = Lelesys.Plugin.SEOHelper:MetaPropertySlider
 		metaKeywords.propertyName = 'metaKeywords'
-		metaDescription = Lelesys.Plugin.SEOHelper:MetaProperty
-		metaDescription.parents = ${q(node).parents()}
+
+		metaDescription = Lelesys.Plugin.SEOHelper:MetaPropertySlider
 		metaDescription.propertyName = 'metaDescription'
 	}
-}
-
-prototype(Lelesys.Plugin.SEOHelper:MetaProperty) {
-	@class = 'Lelesys\\Plugin\\SEOHelper\\TypoScript\\MetaProperty'
 }

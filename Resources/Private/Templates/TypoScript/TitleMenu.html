@@ -1,14 +1,12 @@
-{namespace typo3=TYPO3\Neos\ViewHelpers}
 <f:if condition="{customTitle}">
 	<f:then>
-		{customTitle} - Neos Demo
+		{customTitle}
 	</f:then>
 	<f:else>
 		<f:if condition="{items}">
-			<f:for each="{items}" as="item" reverse="true">
-				{item.label} -
+			<f:for each="{items}" as="item" reverse="true" iteration="iterator">
+				{item.label}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
 			</f:for>
 		</f:if>
-		Neos Demo
 	</f:else>
 </f:if>

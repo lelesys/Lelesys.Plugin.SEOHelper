@@ -1,0 +1,6 @@
+# This object is not a NodeType but just a additional helper TS object
+# This is why following object definition is not added in the NodeTypes.ts2 file
+
+prototype(Lelesys.Plugin.SEOHelper:MetaPropertySlider) {
+	@class = 'Lelesys\\Plugin\\SEOHelper\\TypoScript\\MetaPropertySlider'
+}

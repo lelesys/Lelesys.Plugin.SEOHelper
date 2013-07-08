@@ -13,27 +13,20 @@ namespace Lelesys\Plugin\SEOHelper\TypoScript;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * A TypoScript object which sets the meta properties.
+ * A TypoScript object which finds requested meta property.
+ *
+ * If the property is not found in the current node then it goes
+ * back to the parent nodes until one is found.
  *
  */
-class MetaProperty extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
+class MetaPropertySlider extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
 
 	/**
-	 * @Flow\Inject
-	 * @var \TYPO3\Neos\Domain\Service\ContentContext
-	 */
-	protected $contentContext;
-
-	/**
+	 * Name of meta property to be found
+	 *
 	 * @var string
 	 */
 	protected $propertyName;
-
-	/**
-	 *
-	 * @var array
-	 */
-	protected $parents;
 
 	/**
 	 * Sets property name
@@ -45,7 +38,7 @@ class MetaProperty extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScrip
 	}
 
 	/**
-	 * Returns property name set from TyopScript
+	 * Returns property name
 	 *
 	 * @return string
 	 */
@@ -54,40 +47,31 @@ class MetaProperty extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScrip
 	}
 
 	/**
-	 * Sets parents array
+	 * Finds value of the requested property
 	 *
-	 * @param array $parents
-	 */
-	public function setParents(array $parents) {
-		$this->parents = $parents;
-	}
-
-	/**
-	 * Returns parents array
+	 * Searches back in parent nodes if not found in current node
 	 *
-	 * @return array
-	 */
-	public function getParents() {
-		return $this->tsValue('parents');
-	}
-
-	/**
-	 * @return string
+	 * @return mixed
 	 */
 	public function evaluate() {
 		$context = $this->tsRuntime->getCurrentContext();
-		$node = $context['node'];
-		$metaProperty = $node->getProperty($this->propertyName);
-		$parents = $this->getParents();
-		if (empty($metaProperty) && count($parents) > 0) {
-			foreach ($parents as $parent) {
-				$metaProperty = $parent->getProperty($this->propertyName);
-				if (!empty($metaProperty)) {
-					return $metaProperty;
-				}
+		$documentNode = clone $context['documentNode'];
+		$propertyName = $this->getPropertyName();
+		// find property on current node
+		$propertyValue = $documentNode->getProperty($propertyName);
+		if (!empty($propertyValue)) {
+			return $propertyValue;
+		}
+		// find in parent nodes until to the site node
+		$siteNode = $context['site'];
+		while ($documentNode->getParent() !== $siteNode && $documentNode->getParent() !== NULL) {
+			$documentNode = $documentNode->getParent();
+			$propertyValue = $documentNode->getProperty($propertyName);
+			if (!empty($propertyValue)) {
+				return $propertyValue;
 			}
 		}
-		return $metaProperty;
+		return NULL;
 	}
 
 }
