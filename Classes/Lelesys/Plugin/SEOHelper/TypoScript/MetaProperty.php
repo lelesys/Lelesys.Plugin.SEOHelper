@@ -1,9 +1,14 @@
 <?php
+
 namespace Lelesys\Plugin\SEOHelper\TypoScript;
 
-/*                                                                        *
- * This script belongs to the TYPO3 Flow package "Lelesys.Plugin.SEOHelper".      *
- *                                                                        */
+/*                                                                          *
+ * This script belongs to the TYPO3 Flow package "Lelesys.Plugin.SEOHelper".*
+ *                                                                          *
+ * It is free software; you can redistribute it and/or modify it under      *
+ * the terms of the GNU Lesser General Public License, either version 3     *
+ * of the License, or (at your option) any later version.                   *
+ *                                                                          */
 
 use TYPO3\Flow\Annotations as Flow;
 
@@ -12,10 +17,11 @@ use TYPO3\Flow\Annotations as Flow;
  *
  */
 class MetaProperty extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
+
 	/**
-     * @Flow\Inject
-     * @var \TYPO3\Neos\Domain\Service\ContentContext
-     */
+	 * @Flow\Inject
+	 * @var \TYPO3\Neos\Domain\Service\ContentContext
+	 */
 	protected $contentContext;
 
 	/**
@@ -73,15 +79,17 @@ class MetaProperty extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScrip
 		$node = $context['node'];
 		$metaProperty = $node->getProperty($this->propertyName);
 		$parents = $this->getParents();
-		if(empty($metaProperty) && count($parents)>0) {
+		if (empty($metaProperty) && count($parents) > 0) {
 			foreach ($parents as $parent) {
 				$metaProperty = $parent->getProperty($this->propertyName);
-				if(!empty($metaProperty)){
+				if (!empty($metaProperty)) {
 					return $metaProperty;
 				}
 			}
 		}
 		return $metaProperty;
 	}
+
 }
+
 ?>
