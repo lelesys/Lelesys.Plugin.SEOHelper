@@ -5,28 +5,28 @@
   ui:
     inspector:
       groups:
-        metaoptions:
+        metaOptions:
           label: 'Meta Tag Options'
           priority: 2
   properties:
-    metaTitle:
+    metaAuthor:
       type: string
       ui:
-        label: 'Meta Title'
+        label: 'Meta Author'
         inspector:
-          group: metaoptions
+          group: metaOptions
     metaKeywords:
       type: string
       ui:
         label: 'Meta Keywords'
         inspector:
-          group: metaoptions
+          group: metaOptions
     metaDescription:
       type: string
       ui:
         label: 'Meta Description'
         inspector:
-          group: metaoptions
+          group: metaOptions
     customTitle:
       type: string
       ui:

@@ -13,8 +13,8 @@ page.head {
 	dynamicMetaTags {
 		templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/DynamicMetaTags.html'
 
-		metaTitle = Lelesys.Plugin.SEOHelper:MetaPropertySlider
-		metaTitle.propertyName = 'metaTitle'
+		metaAuthor = Lelesys.Plugin.SEOHelper:MetaPropertySlider
+		metaAuthor.propertyName = 'metaAuthor'
 
 		metaKeywords = Lelesys.Plugin.SEOHelper:MetaPropertySlider
 		metaKeywords.propertyName = 'metaKeywords'
