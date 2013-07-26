@@ -17,18 +17,21 @@
           group: metaOptions
     metaKeywords:
       type: string
+      translatable: TRUE
       ui:
         label: 'Meta Keywords'
         inspector:
           group: metaOptions
     metaDescription:
       type: string
+      translatable: TRUE
       ui:
         label: 'Meta Description'
         inspector:
           group: metaOptions
     customTitle:
       type: string
+      translatable: TRUE
       ui:
         label: 'Custom Page Title'
         inspector:
