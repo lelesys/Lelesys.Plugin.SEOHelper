@@ -3,18 +3,7 @@ Lelesys SEOHelper Plugin
 
 This plugin adds meta tags to your websites.
 
-Warning: This plugin is experimental.
-
-Quick start
------------
-
-* include the plugin's TypoScript definitions to your own one's (located in, for example, `Packages/Sites/Your.Site/Resources/Private/TypoScripts/Library/ContentElements.ts2`) with:
-
-```
-include: resource://Lelesys.Plugin.SEOHelper/Private/TypoScripts/Library/NodeTypes.ts2
-```
-
-Note: The above path should be included after "page = TYPO3.Neos:Page"
+##### Important note: Initial package development was done when TYPO3 Neos was at alpha3/4. We are working hard continuously to get this to work perfectly and to beautify source code using best practices/concepts of Flow/Neos. Stay tuned!
 
 Usage
 -----

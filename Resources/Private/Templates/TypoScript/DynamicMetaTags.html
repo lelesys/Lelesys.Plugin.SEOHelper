@@ -1,4 +1,4 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<meta name="author" content="{ts:render(path: 'metaAuthor')}" />
-<meta name="keywords" content="{ts:render(path: 'metaKeywords')}" />
-<meta name="description" content="{ts:render(path: 'metaDescription')}" />
+<meta name="author" content="{metaAuthor -> f:format.raw()}" />
+<meta name="keywords" content="{metaKeywords -> f:format.raw()}" />
+<meta name="description" content="{metaDescription -> f:format.raw()}" />

@@ -1,5 +1,5 @@
 # Override Page and add more properties
-'TYPO3.Neos:Page':
+'TYPO3.Neos.NodeTypes:Page':
   superTypes:
     - 'TYPO3.Neos:Document'
   ui:
