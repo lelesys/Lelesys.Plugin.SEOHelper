@@ -1,15 +1,14 @@
 include: resource://Lelesys.Plugin.SEOHelper/Private/TypoScript/Library/TypoScriptObjects.ts2
 
 page.head {
-	title = TypoScript:Template
-	title.templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/TitleMenu.html'
-	title.items = ${q(node).parents().add(q(node))}
+	titleTag = TYPO3.TypoScript:Template
+	titleTag.templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/TitleMenu.html'
+	titleTag.items = ${q(node).add(q(node).parents())}
 	# add prefix, suffix here if needed
-        # e.g. title.@process.1 = ${'<prefix>' + value + '<suffix>'}
-        title.@process.1 = ${'<title>' + value + '</title>'}
-	title.customTitle = ${q(node).property('customTitle')}
+        # e.g. titleTag.@process.1 = ${'<prefix>' + value + '<suffix>'}
+        titleTag.@process.1 = ${'<title>' + value + '</title>'}
 
-	dynamicMetaTags = TypoScript:Template
+	dynamicMetaTags = TYPO3.TypoScript:Template
 	dynamicMetaTags {
 		templatePath = 'resource://Lelesys.Plugin.SEOHelper/Private/Templates/TypoScript/DynamicMetaTags.html'
 

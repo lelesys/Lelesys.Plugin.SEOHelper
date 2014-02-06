@@ -1,12 +1,13 @@
-<f:if condition="{customTitle}">
-	<f:then>
-		{customTitle}
-	</f:then>
-	<f:else>
-		<f:if condition="{items}">
-			<f:for each="{items}" as="item" reverse="true" iteration="iterator">
+<f:if condition="{items}">
+	<f:for each="{items}" as="item" iteration="iterator">
+		<f:if condition="{item.properties.customTitle}">
+			<f:then>
+				{item.properties.customTitle}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
+			</f:then>
+			<f:else>
 				{item.label}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
-			</f:for>
+			</f:else>
 		</f:if>
-	</f:else>
+	</f:for>
 </f:if>
+
