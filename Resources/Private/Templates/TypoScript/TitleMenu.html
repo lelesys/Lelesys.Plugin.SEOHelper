@@ -5,7 +5,7 @@
 				{item.properties.customTitle}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
 			</f:then>
 			<f:else>
-				{item.label}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
+				{item.properties.title}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
 			</f:else>
 		</f:if>
 	</f:for>
