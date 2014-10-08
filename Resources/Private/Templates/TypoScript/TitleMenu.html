@@ -1,13 +1,1 @@
-<f:if condition="{items}">
-	<f:for each="{items}" as="item" iteration="iterator">
-		<f:if condition="{item.properties.customTitle}">
-			<f:then>
-				{item.properties.customTitle}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
-			</f:then>
-			<f:else>
-				{item.properties.title}{f:if(condition: iterator.isLast, then: '', else: ' - ')}
-			</f:else>
-		</f:if>
-	</f:for>
-</f:if>
-
+<f:if condition="{items}"><f:for each="{items}" as="item" iteration="iterator"><f:if condition="{item.properties.customTitle}"><f:then>{item.properties.customTitle}{f:if(condition: iterator.isLast, then: '', else: ' - ')}</f:then><f:else>{item.properties.title}{f:if(condition: iterator.isLast, then: '', else: ' - ')}</f:else></f:if></f:for></f:if>
