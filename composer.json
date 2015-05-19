@@ -11,7 +11,7 @@
 		}
 	],
 	"require": {
-		"typo3/neos": "dev-master"
+		"typo3/neos": "2.0.0-beta2"
 	},
 	"autoload": {
 		"psr-0": {
