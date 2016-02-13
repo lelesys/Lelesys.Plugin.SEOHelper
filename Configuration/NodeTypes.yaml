@@ -14,21 +14,25 @@
       ui:
         label: 'Meta Author'
         inspector:
-          group: metaOptions
+          group: seometa
+          position: 10
+          editor: 'TYPO3.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            placeholder: 'Meta author'
     metaKeywords:
       type: string
       translatable: TRUE
       ui:
         label: 'Meta Keywords'
         inspector:
-          group: metaOptions
+          group: seometa
     metaDescription:
       type: string
       translatable: TRUE
       ui:
         label: 'Meta Description'
         inspector:
-          group: metaOptions
+          group: seometa
     customTitle:
       type: string
       translatable: TRUE
